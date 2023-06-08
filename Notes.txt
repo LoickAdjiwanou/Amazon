@@ -1,0 +1,2 @@
+Faire la bdd, ou il y a la recherche, les sign in (renverrons vers un formulare pour s'enregistrer), 
+mettre les articles dans la bdd, faire le amazon currency convertor, le back to top(html et jquery)

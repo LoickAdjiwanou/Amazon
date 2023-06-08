@@ -1,0 +1,21 @@
+<?php 
+    require_once('connect.php');
+    $request=$bdd->prepare('SELECT nom, mdp FROM signin WHERE nom=:nom');
+    $request->execute(array(
+        'nom'=>strip_tags($_POST['nom'])
+    ));
+    $info=$request->fetch();
+    if($info!=false){
+        if($info['mdp']==$_POST['mdp']){ 
+            session_start();
+            $_SESSION['nom']=$_POST['nom'];
+            include('Amazon_2.php');
+        }
+        else{
+            include('sign_in_secur2.php');
+        }
+    }
+    else{
+        include('sign_in_secur3.php');
+    }
+?>
